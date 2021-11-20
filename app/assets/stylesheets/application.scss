@@ -11,3 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.jumbotron {
+  background-image: asset-url('cinema.png');
+}

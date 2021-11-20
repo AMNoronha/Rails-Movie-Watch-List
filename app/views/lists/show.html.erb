@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <% @list.bookmarks.each do |bookmark|  %>
+      <div class="col-sm-4 px-md-5 mt-4">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src=<%= bookmark.movie.poster_url%> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= bookmark.movie.title %></h5>
+            <p class="card-text"><%= bookmark.movie.overview %></p>
+          </div>
+        </div>
+        <%= link_to "Remove",
+            list_bookmark_path(bookmark.id),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New Bookmark", new_list_bookmark_path(@list.id), class:"btn btn-primary" %>
+</div>

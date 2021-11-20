@@ -1,0 +1,19 @@
+<div class="jumbotron text-center">
+  <h2>Save any kind of movies</h2>
+  <h3>Classic</h3>
+</div>
+<div class="container">
+  <div class="row">
+      <% @lists.each do |list| %>
+        <div class="col-sm-4 px-md-5 mt-4">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= list.name %></h5>
+              <p class="card-text">Movie Count: <%= list.movies.count %></p>
+              <%= link_to "View List", list_path(list.id), class: "btn btn-secondary"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
